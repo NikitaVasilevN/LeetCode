@@ -33,4 +33,26 @@ class Solution:
                     max_lenght = counter
                 counter = 1
         return max_lenght if max_lenght > counter else counter
+    
+class Solution_cache:
+    def maxPower(self, s: str) -> int:
+        lenght = 1 
+        prev_c = ''
+        list_lenght = []
+
+        for i in range(len(s)):
+
+            if prev_c == s[i]:
+                lenght += 1
+
+                if i == len(s)-1:
+                    list_lenght.append(lenght)
+
+            else:
+                list_lenght.append(lenght)
+                lenght = 1
+            prev_c = s[i]
+        return max(list_lenght)
+
+
 
