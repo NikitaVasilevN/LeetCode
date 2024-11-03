@@ -30,6 +30,3 @@ class Solution:
             if nums[right]!=0:
                 nums[right], nums[left] = nums[left], nums[right]
                 left += 1
-        return nums 
-nums = [0, 0, 1]
-print(Solution().moveZeroes(nums))
