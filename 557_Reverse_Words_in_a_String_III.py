@@ -22,9 +22,16 @@
 
 
 
-class Solution:
+class Solution_1:
     def reverseWords(self, s: str) -> str:
         list_res = []
         for str in s.split(' '):
             list_res.append(str[::-1])
         return ' '.join(list_res)
+    
+class Solution_2:
+    def reverseWords(self, s: str) -> str:
+        str_list = s.split(' ')
+        for i in range(len(str_list)):
+            str_list[i] = str_list[i][::-1]
+        return ' '.join(str_list)
