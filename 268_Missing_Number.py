@@ -28,10 +28,8 @@
 
 class Solution:
     def missingNumber(self, nums: list[int]) -> int:
-        sum_origi = 0
+        sum_origi = (1 + len(nums)) * len(nums) / 2
         sum_nums = 0
-        for i in range(1, len(nums) + 1):
-            sum_origi+=i
-            sum_nums+=nums[i-1]
-        return sum_origi - sum_nums
-
+        for i in range(len(nums)):
+            sum_nums+= nums[i]
+        return int(sum_origi - sum_nums)
